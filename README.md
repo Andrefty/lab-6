@@ -1,11 +1,11 @@
 <h1 align="center">
-    lab-0X: Titlu
+    lab-06: BST
   </h1>
 
-### Observatii:
-- se va apasa pe butonul verde ___Use this Template___ din aceasta pagina pt ca crea un laborator ce are acest template.
-- se vor crea doua laboratore denumite lab-0X-solved si lab-0X-tasks ( in cazul in care X > 9 se va numii lab-X-solved si lab-X-tasks ) ambele fiind generate ca in observatia anterioara.
-- ___laboratoarele trebuie sa fie private___
-- se va adauga la sectiunea ___About___ un mic sumar cu ce reprezinta labul respectiv(ex: Schelet laborator list)
-- dezvoltarea laboratoarelor poate fi facuta ___pe orice platforma acum___ datorita unui update in makefile-ul din src
-- se vor sterge acest observati dupa ce au fost create laboratoarele si se vor scrie cerintele specifice laboratorului 
+<h1> Cerinte </h1>:
+    <ol>
+    <li> Verificati daca un arbore binar este arbore binar de cautare. Inainte de implementarea acestei cerinte asigurati-va ca ati implementat toate functiile din cerinta1.c deoarece toate sunt folosite pentru testare. </li>
+    <li> Implementati functiile pentru gasirea succesorului si predecesorului unui nod. </li>
+    <b>HINT</b>: Daca nodul are copii in subarborele drept atunci succesorul este cel mai din stanga nod din acel subarbore, daca nu, succesorul este primul sau stramos drept. Daca nodul are copii in subarborele stang atunci predecesorul este cel mai din dreapta nod din acel subarbore, daca nu, predecesorul este primul sau stramos stang. Pentru cazurile in care nu exista subarborii recomandarea este sa mergeti de la nodul al carui succesor/predecesor trebuie sa-l gasiti spre radacina arborelui folosind campul "parent". Succesorul este primul nod ce contine in subarborele lui drept nodul initial. O conditie asemanatoare are loc si pentru predecesor.
+    <li> Implementati functia de salvare a elementelor din intervalul [min_value, max_value] ale unui BST intr-un vector, impreuna cu o functie ce returneaza numarul de elemente din acest interval. Aceste functii pot fi utilizate pentru a testa daca 2 arbori de tip BST contin valori identice. </li>
+    </ol>
