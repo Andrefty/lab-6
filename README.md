@@ -2,7 +2,7 @@
     lab-06: BST
   </h1>
 
-<h1> Cerinte </h1>:
+<h1> Cerinte: </h1>
     <ol>
     <li> Verificati daca un arbore binar este arbore binar de cautare. Inainte de implementarea acestei cerinte asigurati-va ca ati implementat toate functiile din cerinta1.c deoarece toate sunt folosite pentru testare. </li>
     <li> Implementati functiile pentru gasirea succesorului si predecesorului unui nod. </li>
