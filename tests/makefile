@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -g -Wall
 EXECUTABLE = tests
-SHARED-LIB = lab-template
+SHARED-LIB = lab-06
 BUILD_FOLDER_PATH = ../build/
 LIB_PATH = ../src/libs/
 TEST_LIB_PATH = ./libs

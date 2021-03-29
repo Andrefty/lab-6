@@ -6,6 +6,8 @@
 #include <string.h>
 
 
+#include "bst.h"
+
 #define READ_MODE "r+"
 #define APPEND_MODE "a+"
 
