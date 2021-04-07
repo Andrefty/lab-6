@@ -21,7 +21,10 @@ BST* findNode(BST* root, int data)
  */
 BST* findMax(BST* root)
 {
-
+if(root->right)
+	findMax(root->right);
+else
+return root;
 }
 
 /**
