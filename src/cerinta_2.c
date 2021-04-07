@@ -8,9 +8,16 @@
  * @param  data: Valoarea de cautat
  * @retval Nodul cautat, daca nu este gasit se returneaza NULL
  */
-BST* findNode(BST* root, int data)
+BST *findNode(BST *root, int data)
 {
-
+	if (root->data == data)
+	{
+		return root;
+	}
+	if (data < root->data)
+	findNode(root->left,data);
+	if (data > root->data)
+	findNode(root->right,data);
 }
 /**
  * TODO: Implementati o functie ce returneaza nodul ce stocheaza
@@ -19,12 +26,12 @@ BST* findNode(BST* root, int data)
  * @param  root: - Radacina arborelui/subarborelui
  * @retval - Nodul cu valoarea maxima din arbore/subarbore
  */
-BST* findMax(BST* root)
+BST *findMax(BST *root)
 {
-if(root->right)
-	findMax(root->right);
-else
-return root;
+	if (root->right)
+		findMax(root->right);
+	else
+		return root;
 }
 
 /**
@@ -34,9 +41,12 @@ return root;
  * @param  root: - Radacina arborelui/subarborelui
  * @retval - Nodul cu valoarea minima din arbore/subarbore
  */
-BST* findMin(BST* root)
+BST *findMin(BST *root)
 {
-
+	if (root->left)
+		findMin(root->left);
+	else
+		return root;
 }
 
 /**
@@ -46,9 +56,8 @@ BST* findMin(BST* root)
  * @param  root: Nodul al carui succesor trebuie gasit
  * @retval Succesorul nodului root
  */
-BST* findSuccesor(BST* root)
+BST *findSuccesor(BST *root)
 {
-		
 }
 
 /**
@@ -58,7 +67,6 @@ BST* findSuccesor(BST* root)
  * @param  root: Nodul al carui predecesor trebuie gasit
  * @retval Predecesorul nodului root
  */
-BST* findPredecessor(BST* root)
+BST *findPredecessor(BST *root)
 {
-		
 }
