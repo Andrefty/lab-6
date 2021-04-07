@@ -1,5 +1,6 @@
 #include "utils.h"
 
+
 /**
  * TODO: Implementati o functie ce creaza un arbore balansat din datele
  * 	din fisierul f. Arborele nu trebuie sa respecte alta proprietate decat
@@ -9,11 +10,24 @@
  * @param  *f: Fisierul din care sunt citite datele de intrare 
  * @retval	Nodul radacina al arborelui creat 
  */
-BST* createBalanced(int N, FILE *f) 
+BST *createBalanced(int N, FILE *f)
 {
-    
+    int data;
+    if (N > 0)
+    {
+        fscanf(f, "%d", &data);
+        BST *rad = createBSTNode(data);
+        rad->left = createBalanced(N / 2, f);
+        // if (rad->left != NULL)
+        //     rad->left->parent = rad;
+        rad->right = createBalanced(N - 1 - N / 2, f);
+        // if (rad->right != NULL)
+        //     rad->right->parent = rad;
+        return rad;
+    }
+    else
+        return NULL;
 }
-
 
 /**
  * TODO:   Implementati o functie ce testeaza daca un arbore binar este
@@ -24,9 +38,23 @@ BST* createBalanced(int N, FILE *f)
  * @param  min_value: Valoarea minima intalnita pana la nodul curent
  * @retval - true daca arborele este un BST, false in caz contrar
  */
-bool checkBST(BST* root, int max_value, int min_value)
+bool checkBST(BST *root, int max_value, int min_value)
 {
-	
+    // BST *lef = root;
+    // BST *righ = root;
+    // while (lef)
+    //     lef=lef->left;
+    // min_value=lef->data;
+    // while (righ)
+    //     righ=righ->left;
+    // max_value=righ->data;
+    if (root)
+    {
+        
+        if(root->data<min_value||root->data>max_value) return false;
+        return checkBST(root->left, root->data, min_value)&&checkBST(root->right, max_value, root->data);
+    }
+    return true;
 }
 
 /**
@@ -37,9 +65,14 @@ bool checkBST(BST* root, int max_value, int min_value)
  * @retval Nodul creat
  */
 
-BST* createBSTNode(int data)
+BST *createBSTNode(int data)
 {
-	
+    BST *rad = (BST *)malloc(sizeof(BST));
+    (rad->data) = data;
+    rad->left = NULL;
+    rad->right = NULL;
+    rad->parent = NULL;
+    return rad;
 }
 /**
  * TODO: Implementati o functie ce insereaza un nod nou intr-un BST cu
@@ -49,7 +82,14 @@ BST* createBSTNode(int data)
  * @param  data: Valoarea ce trebuie inserata in arbore
  * @retval Radacina arborelui modificat anterior
  */
-BST* insertInBST(BST* root, int data)
+BST *insertInBST(BST *root, int data)
 {
+    if (root == NULL)
+        return createBSTNode(data);
+    if (data < root->data)
+        root->left = insertInBST(root->left, data);
+    else if (data > root->data)
+        root->right = insertInBST(root->right, data);
 
+    return root;
 }

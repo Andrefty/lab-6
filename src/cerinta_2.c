@@ -10,7 +10,7 @@
  */
 BST* findNode(BST* root, int data)
 {
-		
+		if(root->)
 }
 /**
  * TODO: Implementati o functie ce returneaza nodul ce stocheaza
