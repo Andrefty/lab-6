@@ -15,9 +15,9 @@ BST *findNode(BST *root, int data)
 		return root;
 	}
 	if (data < root->data)
-		findNode(root->left, data);
+		return findNode(root->left, data);
 	if (data > root->data)
-		findNode(root->right, data);
+		return findNode(root->right, data);
 }
 /**
  * TODO: Implementati o functie ce returneaza nodul ce stocheaza
