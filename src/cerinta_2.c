@@ -92,4 +92,27 @@ BST *findSuccesor(BST *root)
  */
 BST *findPredecessor(BST *root)
 {
+	if (root->left && root->right)
+	{
+		BST *cop = root->right;
+		while (cop)
+		{
+			root = cop;
+			if (cop->left)
+				cop = cop->left;
+			else
+				cop = cop->right;
+		}
+		return root;
+	}
+	else if (root->left == NULL)
+	{
+		BST *cop = root->parent;
+		while (cop->right != root)
+		{
+			root = cop;
+			cop = root->parent;
+		}
+		return cop;
+	}
 }
