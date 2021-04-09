@@ -94,14 +94,14 @@ BST *findPredecessor(BST *root)
 {
 	if (root->left && root->right)
 	{
-		BST *cop = root->right;
+		BST *cop = root->left;
 		while (cop)
 		{
 			root = cop;
-			if (cop->left)
-				cop = cop->left;
-			else
+			if (cop->right)
 				cop = cop->right;
+			else
+				cop = cop->left;
 		}
 		return root;
 	}
