@@ -58,6 +58,23 @@ BST *findMin(BST *root)
  */
 BST *findSuccesor(BST *root)
 {
+	if(root->left && root->right)
+	{
+		BST *cop=root->right;
+		while (cop)
+		{	
+			root=cop;
+			if(cop->left)
+			cop=cop->left;
+			else cop=cop->right;
+		}
+		return root;
+	}
+	else
+	{
+		
+	}
+	
 }
 
 /**
