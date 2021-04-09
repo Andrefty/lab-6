@@ -1,6 +1,5 @@
 #include "utils.h"
 
-
 /**
  * TODO: Implementati o functie ce creaza un arbore balansat din datele
  * 	din fisierul f. Arborele nu trebuie sa respecte alta proprietate decat
@@ -50,9 +49,10 @@ bool checkBST(BST *root, int max_value, int min_value)
     // max_value=righ->data;
     if (root)
     {
-        
-        if(root->data<min_value||root->data>max_value) return false;
-        return checkBST(root->left, root->data, min_value)&&checkBST(root->right, max_value, root->data);
+
+        if (root->data < min_value || root->data > max_value)
+            return false;
+        return checkBST(root->left, root->data, min_value) && checkBST(root->right, max_value, root->data);
     }
     return true;
 }
@@ -87,9 +87,15 @@ BST *insertInBST(BST *root, int data)
     if (root == NULL)
         return createBSTNode(data);
     if (data < root->data)
+    {
         root->left = insertInBST(root->left, data);
+        root->left->parent = root;
+    }
     else if (data > root->data)
+    {
         root->right = insertInBST(root->right, data);
+        root->right->parent = root;
+    }
 
     return root;
 }
