@@ -1,11 +1,18 @@
+
 #include "utils.h"
 
 int main()
 {
-	BST *root;
-	FILE *file = fopen("../data/test1-data3.txt", "r");
-	int size;
+	BST *root=NULL;
+	FILE *file = fopen("../data/test2-data.txt", "r");
+	int size,data;
 	fscanf(file, "%d", &size);
-	root = createBalanced(size, file);
+//	root = createBalanced(size, file);
+    for (int i = 0; i < size; i++)
+    {
+        fscanf(file, "%d", &data);
+        root = insertInBST(root, data);
+    }
+    
 	checkBST(root, INT_MAX, INT_MIN);
 }
