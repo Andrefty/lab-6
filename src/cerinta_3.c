@@ -24,7 +24,7 @@ void inorder(BST *root, int *c, int max_value, int min_value)
 void bstToArray(BST *root, BST **arr, int *size, int max_value, int min_value)
 {
     int i = 0;
-    *size = numberOfNodesInBetween(root, max_value, min_value);
+    BST *cop=root;
     if (root)
     {
         bstToArray(root->left, arr, size, max_value, min_value);
@@ -32,6 +32,7 @@ void bstToArray(BST *root, BST **arr, int *size, int max_value, int min_value)
             arr[i++] = root;
         bstToArray(root->right, arr, size, max_value, min_value);
     }
+    *size = numberOfNodesInBetween(cop, max_value, min_value);
 }
 
 /**
