@@ -13,6 +13,15 @@
  */
 void bstToArray(BST *root, BST **arr, int *size, int max_value, int min_value)
 {
+    int c = numberOfNodesInBetween(root, max_value, min_value), i = 0;
+    *arr = (BST *)malloc(c * sizeof(BST));
+    if (root)
+    {
+        bstToArray(root->left, arr, size, max_value, min_value);
+        if (root->data <= max_value && root->data >= min_value)
+            arr[i++] = root;
+        bstToArray(root->right, arr, size, max_value, min_value);
+    }
 }
 
 /**
