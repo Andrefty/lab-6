@@ -6,7 +6,7 @@
 
 
  <p align = "center"> 
-  <img src="https://github.com/sda-ab/lab-06-tasks/blob/main/data/BST.PNG" width = "300px" >
+  <img src="C:\\Users\\qwert\\Desktop\\SDA\\lab-06-tasks\\data\\BST.PNG" width = "300px" >
  </p>
 
 <h1> Cerinte: </h1>
@@ -21,14 +21,14 @@
 <h2> Animatii cerinta 2</h2>
  
  <p align = "center"> 
-  <img src="https://github.com/sda-ab/lab-06-tasks/blob/main/data/succesor_e.gif" width = "300px" title = "Succesor in subarborele drept">
+  <img src="C:\\Users\\qwert\\Desktop\\SDA\\lab-06-tasks\\data\\succesor_e.gif" width = "300px" title = "Succesor in subarborele drept">
  </p>
   <p align = "center"> 
-  <img src="https://github.com/sda-ab/lab-06-tasks/blob/main/data/predecesor_e.gif" width = "300px" title = "Predecesor in subarborele stang">
+  <img src="C:\\Users\\qwert\\Desktop\\SDA\\lab-06-tasks\\data\\predecesor_e.gif" width = "300px" title = "Predecesor in subarborele stang">
  </p>
   <p align = "center"> 
-  <img src="https://github.com/sda-ab/lab-06-tasks/blob/main/data/succesor_h.gif" width = "300px" title = "Succesorul este cel primul stramos drept">
+  <img src="C:\\Users\\qwert\\Desktop\\SDA\\lab-06-tasks\\data\\succesor_h.gif" width = "300px" title = "Succesorul este cel primul stramos drept">
  </p>
   <p align = "center"> 
-  <img src="https://github.com/sda-ab/lab-06-tasks/blob/main/data/predecesor_h.gif" width = "300px" title = "Predecesorul este cel primul stramos stang">
+  <img src="C:\\Users\\qwert\\Desktop\\SDA\\lab-06-tasks\\data\\predecesor_h.gif" width = "300px" title = "Predecesorul este cel primul stramos stang">
  </p>

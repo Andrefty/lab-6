@@ -11,11 +11,9 @@
  * @param  min_value: Pragul inferior
  * @retval None
  */
-void bstToArray(BST* root, BST** arr, int *size, int max_value, int min_value)
+void bstToArray(BST *root, BST **arr, int *size, int max_value, int min_value)
 {
-	
 }
-
 
 /**
  * TODO: Implementati o functie ce returneaza numarul de noduri ce stocheaza
@@ -27,8 +25,25 @@ void bstToArray(BST* root, BST** arr, int *size, int max_value, int min_value)
  * @retval Numarul de noduri cu valori in [min_value, max_value] 
  *  din arbore/subarbore
  */
-int numberOfNodesInBetween(BST* root, int max_value, int min_value)
+int numberOfNodesInBetween(BST *root, int max_value, int min_value)
 {
-
+    int c = 0;
+    if (root)
+    {
+        numberOfNodesInBetween(root->left, max_value, min_value);
+        if (root->data <= max_value && root->data >= min_value)
+            c++;
+        numberOfNodesInBetween(root->right, max_value, min_value);
+    }
+    return c;
 }
 
+// void inorder(BST *root)
+// {
+//     if (root)
+//     {
+//         inorder(root->left);
+//         printf("%d ", root->data);
+//         inorder(root->right);
+//     }
+// }
