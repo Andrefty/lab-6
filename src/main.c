@@ -4,7 +4,7 @@
 int main()
 {
 	BST *root=NULL;
-	FILE *file = fopen("../data/test2-data.txt", "r");
+	FILE *file = fopen("../data/test3-data1.txt", "r");
 	int size,data;
 	fscanf(file, "%d", &size);
 //	root = createBalanced(size, file);
