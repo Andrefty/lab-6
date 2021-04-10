@@ -1,5 +1,15 @@
 #include "utils.h"
 
+void inorder(BST *root, int *c, int max_value, int min_value)
+{
+    if (root)
+    {
+        inorder(root->left, c, max_value, min_value);
+        if (root->data <= max_value && root->data >= min_value)
+            (*c)++;
+        inorder(root->right, c, max_value, min_value);
+    }
+}
 /**
  * TODO: Returnati prin intermediul parametrului arr un vector ce contine toate
  * 	nodurile din arborele binar de cautare cu valori aflate in intervalul [min_value, max_value]  
@@ -38,22 +48,6 @@ void bstToArray(BST *root, BST **arr, int *size, int max_value, int min_value)
 int numberOfNodesInBetween(BST *root, int max_value, int min_value)
 {
     int c = 0;
-    if (root)
-    {
-        numberOfNodesInBetween(root->left, max_value, min_value);
-        if (root->data <= max_value && root->data >= min_value)
-            c++;
-        numberOfNodesInBetween(root->right, max_value, min_value);
-    }
+    inorder(root,&c,max_value,min_value);
     return c;
 }
-
-// void inorder(BST *root)
-// {
-//     if (root)
-//     {
-//         inorder(root->left);
-//         printf("%d ", root->data);
-//         inorder(root->right);
-//     }
-// }
