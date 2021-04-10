@@ -10,6 +10,16 @@ void inorder(BST *root, int *c, int max_value, int min_value)
         inorder(root->right, c, max_value, min_value);
     }
 }
+void inorder2(BST *root, BST **arr, int *c, int max_value, int min_value)
+{
+    if (root)
+    {
+        inorder2(root->left, arr, c, max_value, min_value);
+        if (root->data <= max_value && root->data >= min_value)
+            arr[(*c)++] = root;
+        inorder2(root->right, arr, c, max_value, min_value);
+    }
+}
 /**
  * TODO: Returnati prin intermediul parametrului arr un vector ce contine toate
  * 	nodurile din arborele binar de cautare cu valori aflate in intervalul [min_value, max_value]  
@@ -24,14 +34,16 @@ void inorder(BST *root, int *c, int max_value, int min_value)
 void bstToArray(BST *root, BST **arr, int *size, int max_value, int min_value)
 {
     int i = 0;
-    BST *cop=root;
-    if (root)
-    {
-        bstToArray(root->left, arr, size, max_value, min_value);
-        if (root->data <= max_value && root->data >= min_value)
-            arr[i++] = root;
-        bstToArray(root->right, arr, size, max_value, min_value);
-    }
+    BST *cop = root;
+    inorder2(root,arr,&i,max_value,min_value);
+
+    // if (root)
+    // {
+    //     bstToArray(root->left, arr, size, max_value, min_value);
+    //     if (root->data <= max_value && root->data >= min_value)
+    //         arr[i++] = root;
+    //     bstToArray(root->right, arr, size, max_value, min_value);
+    // }
     *size = numberOfNodesInBetween(cop, max_value, min_value);
 }
 
@@ -48,6 +60,6 @@ void bstToArray(BST *root, BST **arr, int *size, int max_value, int min_value)
 int numberOfNodesInBetween(BST *root, int max_value, int min_value)
 {
     int c = 0;
-    inorder(root,&c,max_value,min_value);
+    inorder(root, &c, max_value, min_value);
     return c;
 }
