@@ -25,7 +25,6 @@ void bstToArray(BST *root, BST **arr, int *size, int max_value, int min_value)
 {
     int i = 0;
     *size = numberOfNodesInBetween(root, max_value, min_value);
-    *arr = (BST *)malloc(*size * sizeof(BST));
     if (root)
     {
         bstToArray(root->left, arr, size, max_value, min_value);
